@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  summary: MyText
+  customer: MyString
+  projectManager: MyString
+  startDate: 2015-09-29
+  transactionalBusinessManager: MyString
+  goLiveDate: 2015-09-29
+
+two:
+  summary: MyText
+  customer: MyString
+  projectManager: MyString
+  startDate: 2015-09-29
+  transactionalBusinessManager: MyString
+  goLiveDate: 2015-09-29

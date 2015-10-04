@@ -1,0 +1,29 @@
+<%= form_for(@project_request) do |f| %>
+  <% if @project_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project_request.errors.count, "error") %> prohibited this project_request from being saved:</h2>
+
+      <ul>
+      <% @project_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table table-hover">
+    <tr><td><strong>Summary</strong></td>
+    <td><%= f.text_area :summary %></td></tr>
+
+    <tr><td><strong>Start Date</strong></td>
+  <td>  <%= f.date_select :startDate %></td></tr>
+  <tr><td><strong>TBM</strong></td>
+<td>    <%= f.text_field :transactionalBusinessManager %></td>
+  </tr>
+  <tr><td><strong> Go Live Date</strong></td>
+<td>    <%= f.date_select :goLiveDate %></td></tr>
+  </table>
+  <%= link_to 'Back', project_requests_path , class:"btn btn-lg btn-default"%> |
+  <%= f.submit class: "btn btn-lg btn-default" %>
+
+<% end %>

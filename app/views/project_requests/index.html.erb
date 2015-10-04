@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Project Requests</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Summary</th>
+      <th>Start Date</th>
+      <th>TBM</th>
+      <th>Go Live</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project_requests.each do |project_request| %>
+      <tr>
+        <td><%= project_request.summary %></td>
+        <td><%= project_request.startDate %></td>
+        <td><%= project_request.transactionalBusinessManager %></td>
+        <td><%= project_request.goLiveDate %></td>
+        <td><%= link_to '', new_project_path(project_request), class: "glyphicon glyphicon-play" %></td>
+        <td><%= link_to '', edit_project_request_path(project_request), class: "glyphicon glyphicon-edit" %></td>
+        <td><%= link_to '', project_request, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project request', new_project_request_path, class: "btn btn-lg btn-default btn-block" %>

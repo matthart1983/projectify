@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projectify</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+      <div class="container">
+        <div class="header clearfix">
+          <nav>
+            <ul class="nav nav-pills pull-left">
+
+             <li role="presentation" class="active"><h3 class="text-muted">Projectify</h3></li>
+               <li role="presentation"><img width="66%" height="33%"src="http://www.westpac.com.au/furniture/images/print-logo.png"/></li>
+            </ul>
+            <ul class="nav nav-pills pull-right">
+
+             <li role="presentation" class="active"><%= link_to 'Request', new_project_request_path %></li>
+              <li role="presentation"><%= link_to 'Allocate', project_requests_path %></li>
+              <li role="presentation"><%= link_to 'Manage', projects_path %></li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      <div class="jumbotron">
+         <%= yield %>
+      </div>
+
+</body>
+</html>

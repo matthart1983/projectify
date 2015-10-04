@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assignee: MyText
+  project: 
+  description: MyText
+  dueDate: 2015-10-02
+
+two:
+  assignee: MyText
+  project: 
+  description: MyText
+  dueDate: 2015-10-02
