@@ -27,6 +27,12 @@
              <li role="presentation" class="active"><%= link_to 'Request', new_project_request_path %></li>
               <li role="presentation"><%= link_to 'Allocate', project_requests_path %></li>
               <li role="presentation"><%= link_to 'Manage', projects_path %></li>
+              <li role="presentation"><%= if user_signed_in?
+                link_to 'Sign Out', destroy_user_session_path, method: :delete
+                else
+                 link_to 'Sign In', new_user_session_path, method: :delete
+                end
+                 %></li>
 
             </ul>
           </nav>

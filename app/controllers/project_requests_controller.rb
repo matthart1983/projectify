@@ -1,6 +1,6 @@
 class ProjectRequestsController < ApplicationController
   before_action :set_project_request, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /project_requests
   # GET /project_requests.json
   def index
@@ -39,8 +39,6 @@ class ProjectRequestsController < ApplicationController
 
   def allocate
     @project_request = ProjectRequest.new(project_request_params)
-
-
     respond_to do |format|
       if @project_request.save
         format.html { redirect_to @project_request, notice: 'Project request was successfully created.' }

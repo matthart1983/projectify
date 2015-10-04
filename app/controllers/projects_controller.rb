@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /projects
   # GET /projects.json
   def index
@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @actionItems = ActionItem.all
-@relevantActionItems =Array.new
+    @relevantActionItems =Array.new
     @actionItems.each do |actionItem|
     if actionItem.project = params[:id]
         @relevantActionItems << (actionItem)

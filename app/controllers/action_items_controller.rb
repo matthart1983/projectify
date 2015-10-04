@@ -1,6 +1,6 @@
 class ActionItemsController < ApplicationController
   before_action :set_action_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /action_items
   # GET /action_items.json
   def index
