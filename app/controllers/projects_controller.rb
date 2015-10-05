@@ -22,11 +22,13 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    @projectRequest = ProjectRequest.find(params[:format])
-    @project.summary = @projectRequest.summary
-    @project.transactionalBusinessManager = @projectRequest.transactionalBusinessManager
-    @project.startDate = @projectRequest.startDate
-    @project.goLiveDate = @projectRequest.goLiveDate
+    if params[:format] != nil
+      @projectRequest = ProjectRequest.find(params[:format])
+      @project.summary = @projectRequest.summary
+      @project.transactionalBusinessManager = @projectRequest.transactionalBusinessManager
+      @project.startDate = @projectRequest.startDate
+      @project.goLiveDate = @projectRequest.goLiveDate
+    end
   end
 
   # GET /projects/1/edit

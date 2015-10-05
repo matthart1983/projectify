@@ -11,31 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :summary %><br>
-    <%= f.text_area :summary %>
-  </div>
-  <div class="field">
-    <%= f.label :customer %><br>
+  <table class="table table-hover">
+    <tr><td>
+    <%= f.label :summary %></td><td>
+    <%= f.text_area :summary %> </td>
+  </tr>
+    <tr><td>
+    <%= f.label :customer %></td><td>
     <%= f.text_field :customer %>
-  </div>
-  <div class="field">
-    <%= f.label :projectManager %><br>
+  </td></tr>
+    <tr><td><strong>Project Manager<strong></td><td>
     <%= f.text_field :projectManager %>
-  </div>
-  <div class="field">
-    <%= f.label :startDate %><br>
+</td></tr>
+    <tr><td>
+    <strong>Kick Off Date</strong</td><td>
     <%= f.date_select :startDate %>
-  </div>
-  <div class="field">
-    <%= f.label :transactionalBusinessManager %><br>
+</td></tr>
+    <tr><td>
+    <strong>TBM<strong></td><td>
     <%= f.text_field :transactionalBusinessManager %>
-  </div>
-  <div class="field">
-    <%= f.label :goLiveDate %><br>
+</td></tr>
+    <tr><td>
+    <strong>Go Live Date</strong></td><td>
     <%= f.date_select :goLiveDate %>
-  </div>
+    </td></tr>
+  </table>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-lg btn-default" %>
   </div>
 <% end %>
